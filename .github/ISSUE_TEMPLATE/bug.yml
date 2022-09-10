@@ -40,12 +40,38 @@ body:
         - macOS
         - 其他
 
+  - type: dropdown
+    id: idc
+    attributes:
+      label: IDC
+      description: 请提供你所使用的网络环境。
+      options:
+        - 电信
+        - 联通
+        - 移动
+        - 教育网
+        - 腾讯云
+        - 阿里云
+        - 华为云
+        - 其他
+
+  - type: input
+    id: python-version
+    attributes:
+      label: Python 版本
+      description: 请提供你运行 BBot 的 Python 版本。
+      placeholder: 例如：3.9.1。如为 Release 的一键启动包，请填写 `Release`。
+    validations:
+      required: true
+
   - type: input
     id: bbot-version
     attributes:
       label: BBot 版本
       description: 请提供你运行的 BBot 版本。
       placeholder: 例如：v1.0.0 或 commit hash
+    validations:
+      required: true
 
   - type: input
     id: mirai-version
@@ -84,7 +110,7 @@ body:
     id: abot-config
     attributes:
       label: Abot 配置
-      description: 请完整复制 Abot 的配置文件，并且将其粘贴到此处，请自行处理隐私信息。
+      description: 请完整复制 BBot 的配置文件，并且将其粘贴到此处，请自行处理隐私信息。
       render: YAML
     validations:
       required: true
@@ -102,7 +128,13 @@ body:
     id: abot-log
     attributes:
       label: 在此处填写 Abot 日志
-      description: 请完整复制 Abot 的控制台日志，并且将其粘贴到此处。
+      description: 请完整复制 BBot 的控制台日志，并且将其粘贴到此处。
       render: Text
     validations:
       required: true
+
+  - type: textarea
+    id: other-info
+    attributes:
+      label: 其他信息
+      description: 在此处填写其他你认为有用的信息，例如截图、压缩的日志文件等。
