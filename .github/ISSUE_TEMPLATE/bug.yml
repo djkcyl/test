@@ -78,6 +78,7 @@ body:
     attributes:
       label: Mirai 版本号
       description: 在此处填写你的 Mirai 版本号。
+      placeholder: 例如：v2.12.2
     validations:
       required: true
 
@@ -86,6 +87,7 @@ body:
     attributes:
       label: Mirai API HTTP 版本号
       description: 在此处填写你的 Mirai API HTTP 版本号。
+      placeholder: 例如：v2.6.2
     validations:
       required: true
 
@@ -107,9 +109,9 @@ body:
       required: true
 
   - type: textarea
-    id: abot-config
+    id: bbot-config
     attributes:
-      label: Abot 配置
+      label: BBot 配置
       description: 请完整复制 BBot 的配置文件，并且将其粘贴到此处，请自行处理隐私信息。
       render: YAML
     validations:
@@ -127,7 +129,7 @@ body:
   - type: textarea
     id: abot-log
     attributes:
-      label: 在此处填写 Abot 日志
+      label: 在此处填写 BBot 日志
       description: 请完整复制 BBot 的控制台日志，并且将其粘贴到此处。
       render: Text
     validations:
