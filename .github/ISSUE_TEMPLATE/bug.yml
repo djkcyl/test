@@ -7,25 +7,17 @@ body:
     attributes:
       value: |
         请先确保你完整阅读了项目的 [Wiki](https://github.com/djkcyl/BBot-Graia/wiki)。
-        
+
         请善用 GitHub 的 Issue 搜索功能，确保你的问题不是已知或已解决的问题。
 
         > 注：上游错误请不要在此处提交，请自行提交到相应的 Issue。
 
         如果您在检查了所有的配置等后依然出现错误，请在下方填写错误报告，并且提供以下信息：
 
-  - type: textarea
-    id: issue-description
-    attributes:
-      label: 问题简述
-      description: 在下方详细写出你遇到的问题，以及问题是如何发生的，例如你的操作步骤等。
-    validations:
-      required: true
-
   - type: checkboxes
     id: terms
     attributes:
-      label: 我已经确认
+      label: 需要由您确认的事项
       description: 请确保你已经阅读了上述内容，并且确认你的问题不是已知或已解决的问题。
       options:
         - label: 我已阅读了项目的 Wiki，并且成功安装了所需的所有依赖。
@@ -34,17 +26,27 @@ body:
           required: true
         - label: 我已经确认我的问题不是上游错误。
           required: true
+        - label: 是否为 Release 的一键启动包。
+          required: false
 
-  - type: checkboxes
-    id: is_bundle
+  - type: dropdown
+    id: system
     attributes:
-      label: 是否为 Release 的一键启动包
-      description: 如果你使用的是 Release 的一键启动包，请在下方选择是。
+      label: 系统
+      description: 请提供你的系统信息。
       options:
-        - label: 是
-          required: false
-        - label: 否
-          required: false
+        - Windows
+        - Linux
+        - macOS
+        - 其他
+
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: 问题简述
+      description: 在下方详细写出你遇到的问题，以及问题是如何发生的，例如你的操作步骤等。
+    validations:
+      required: true
 
   - type: input
     id: mirai-version
